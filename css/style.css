@@ -724,6 +724,7 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 24px 60px -30px rgba(11,37,69,0.3);
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 .contact-form h3 { font-size: 1.3rem; margin-bottom: 0.8em; }
 .contact-form label {
@@ -735,6 +736,9 @@ img { max-width: 100%; display: block; }
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   font-family: var(--font-body);
   font-size: 0.95rem;
   padding: 12px 14px;
@@ -821,6 +825,7 @@ img { max-width: 100%; display: block; }
   .course-tracks { grid-template-columns: 1fr; }
   .reqs-inner { grid-template-columns: 1fr; gap: 48px; }
   .contact-inner { grid-template-columns: 1fr; }
+  .about-inner > *, .contact-inner > * { min-width: 0; }
 }
 
 @media (max-width: 760px) {
