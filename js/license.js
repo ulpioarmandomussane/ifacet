@@ -1,10 +1,9 @@
 
 const SITE_EXPIRY_DATE = '2027-10-10';
 
-// Mensagem mostrada quando o prazo expira (pode ser personalizada)
 const SITE_EXPIRY_MESSAGE = {
   title: 'Serviço temporariamente indisponível',
-  body: 'Este site precisa de atualização. Por favor contacte o responsável pela manutenção para mais informações.',
+  body: 'Este site encontra-se em manutenção. Por favor contacte o responsável pela manutenção para mais informações.',
 };
 
 (function checkSiteValidity() {
