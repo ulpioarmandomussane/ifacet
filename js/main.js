@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
       status.textContent = 'A abrir o WhatsApp com o seu pedido...';
       status.style.color = '#1E8449';
 
-      window.open(`https://wa.me/258860642173?text=${texto}`, '_blank');
+      window.open(`https://wa.me/258874839909?text=${texto}`, '_blank');
       form.reset();
     });
   }
