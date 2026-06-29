@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // Scroll-reveal nativo (substitui a biblioteca AOS — sem dependência externa)
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Menu mobile
   const navToggle = document.getElementById('navToggle');
   const mainNav = document.getElementById('mainNav');
+  const navClose = document.getElementById('navClose');
 
   if (navToggle && mainNav) {
     navToggle.addEventListener('click', () => {
@@ -42,6 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
       navToggle.classList.toggle('open', isOpen);
       navToggle.setAttribute('aria-expanded', String(isOpen));
     });
+
+    // Fecha o menu ao clicar no X
+    if (navClose) {
+      navClose.addEventListener('click', () => {
+        mainNav.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    }
 
     // Fecha o menu ao clicar num link
     mainNav.querySelectorAll('a').forEach(link => {
@@ -187,7 +198,51 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'ArrowLeft') openLightbox(currentIndex - 1);
     } else if (albumView && albumView.classList.contains('open') && e.key === 'Escape') {
       closeAlbum();
+    } else if (libView && libView.classList.contains('open') && e.key === 'Escape') {
+      closeLib();
     }
   });
+
+  // = Biblioteca: cursos e manuais =
+  const libCards = Array.from(document.querySelectorAll('.lib-card'));
+  const libGrid = document.getElementById('libGrid');
+  const libView = document.getElementById('libView');
+  const libViewTitle = document.getElementById('libViewTitle');
+  const libBack = document.getElementById('libBack');
+  const libManuals = Array.from(document.querySelectorAll('.lib-manual'));
+
+  const libTitles = {
+    enfermagem: 'Enfermagem Geral',
+    smi: 'Saúde Materno Infantil',
+    medicina: 'Medicina Geral',
+    'adm-publica': 'Administração Pública',
+    gestao: 'Gestão',
+  };
+
+  function openLib(libKey) {
+    libManuals.forEach(manual => {
+      manual.classList.toggle('is-visible', manual.dataset.lib === libKey);
+    });
+    if (libViewTitle) libViewTitle.textContent = libTitles[libKey] || 'Curso';
+    if (libGrid) libGrid.classList.add('is-hidden');
+    if (libView) {
+      libView.classList.add('open');
+      libView.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function closeLib() {
+    if (libView) libView.classList.remove('open');
+    if (libGrid) {
+      libGrid.classList.remove('is-hidden');
+      libGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  libCards.forEach(card => {
+    card.addEventListener('click', () => openLib(card.dataset.lib));
+  });
+
+  if (libBack) libBack.addEventListener('click', closeLib);
 
 });
