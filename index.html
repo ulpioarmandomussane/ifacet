@@ -8,7 +8,6 @@
 <title>IFACET</title>
 <meta name="description" content="IFACET — Formação técnico-profissional em Maputo. Cursos na Área de Saúde e em Administração e Gestão. Inscrições abertas. Garantia de estágio.">
 
-<!-- Controlo de validade do site — deve ser o primeiro script a correr -->
 <script src="js/license.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +20,7 @@
 <!-- Textura de fundo -->
 <div class="capulana-noise" aria-hidden="true"></div>
 
-<!-- HEADER -->
+<!-- = HEADER = -->
 <header class="site-header" id="topo">
   <div class="container header-inner">
     <a href="#topo" class="brand">
@@ -30,10 +29,12 @@
     </a>
 
     <nav class="main-nav" id="mainNav">
+      <button class="nav-close" id="navClose" aria-label="Fechar menu">&times;</button>
       <a href="#sobre">Sobre</a>
       <a href="#cursos">Cursos</a>
       <a href="#galeria">Galeria</a>
       <a href="#requisitos">Requisitos</a>
+      <a href="#biblioteca">Biblioteca</a>
       <a href="#contacto" class="nav-cta">Inscreva-se</a>
     </nav>
 
@@ -43,7 +44,7 @@
   </div>
 </header>
 
-<!-- HERO -->
+<!-- = HERO = -->
 <section class="hero" id="hero">
   <div class="hero-map" aria-hidden="true"></div>
   <div class="container hero-inner">
@@ -88,7 +89,7 @@
   <div class="hero-wave" aria-hidden="true"></div>
 </section>
 
-<!-- SOBRE / MARCA -->
+<!-- = SOBRE / MARCA = -->
 <section class="about" id="sobre">
   <div class="container about-inner">
     <div class="about-mark" data-aos="fade-right">
@@ -120,7 +121,7 @@
   </div>
 </section>
 
-<!-- CURSOS -->
+<!-- = CURSOS = -->
 <section class="courses" id="cursos">
   <div class="container">
     <div class="section-head" data-aos="fade-up">
@@ -161,6 +162,7 @@
           <li>Contabilidade</li>
           <li>Gestão</li>
           <li>Gestão de Recursos Humanos</li>
+          <li>Administração Pública</li>
         </ul>
       </article>
 
@@ -286,7 +288,151 @@
 </div>
 
 
-<!-- REQUISITOS / VALORES -->
+
+<!-- = BIBLIOTECA = -->
+<section class="library" id="biblioteca">
+  <div class="container">
+    <div class="section-head" data-aos="fade-up">
+      <p class="eyebrow">Recursos de estudo</p>
+      <h2>Biblioteca digital — manuais por curso.</h2>
+      <p class="library-lede">Escolha o seu curso e encontre os manuais de apoio disponíveis para descarregar.</p>
+    </div>
+
+    <!-- Vista de capas dos cursos com biblioteca -->
+    <div class="lib-grid" id="libGrid">
+
+      <button class="lib-card" data-lib="enfermagem" data-aos="fade-up" data-aos-delay="0">
+        <span class="lib-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7.5-4.6-10-9.3C.5 8.3 2 4.5 5.6 4c2-.3 3.6.7 4.4 2.1C10.8 4.7 12.4 3.7 14.4 4c3.6.5 5.1 4.3 3.6 7.7C15.5 16.4 12 21 12 21z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="lib-card-title">Enfermagem Geral</span>
+        <span class="lib-card-count mono">em preparação</span>
+      </button>
+
+      <button class="lib-card" data-lib="smi" data-aos="fade-up" data-aos-delay="60">
+        <span class="lib-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7.5-4.6-10-9.3C.5 8.3 2 4.5 5.6 4c2-.3 3.6.7 4.4 2.1C10.8 4.7 12.4 3.7 14.4 4c3.6.5 5.1 4.3 3.6 7.7C15.5 16.4 12 21 12 21z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </span>
+
+        <span class="lib-card-title">Saúde Materno Infantil</span>
+        <span class="lib-card-count mono">em preparação</span>
+      </button>
+
+      <button class="lib-card" data-lib="medicina" data-aos="fade-up" data-aos-delay="120">
+        <span class="lib-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7.5-4.6-10-9.3C.5 8.3 2 4.5 5.6 4c2-.3 3.6.7 4.4 2.1C10.8 4.7 12.4 3.7 14.4 4c3.6.5 5.1 4.3 3.6 7.7C15.5 16.4 12 21 12 21z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="lib-card-title">Medicina Geral</span>
+        <span class="lib-card-count mono">em preparação</span>
+      </button>
+
+      <button class="lib-card" data-lib="adm-publica" data-aos="fade-up" data-aos-delay="180">
+        <span class="lib-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V10M10 19V5M16 19v-7M20 19V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </span>
+        <span class="lib-card-title">Administração Pública</span>
+        <span class="lib-card-count mono">em preparação</span>
+      </button>
+
+      <button class="lib-card" data-lib="gestao" data-aos="fade-up" data-aos-delay="240">
+        <span class="lib-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 19V10M10 19V5M16 19v-7M20 19V8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </span>
+        <span class="lib-card-title">Gestão</span>
+        <span class="lib-card-count mono">em preparação</span>
+      </button>
+
+    </div>
+
+    <!-- Vista interna de um curso -->
+    <div class="lib-view" id="libView">
+      <button class="lib-back" id="libBack">
+        <span aria-hidden="true">&#8249;</span> Voltar aos cursos
+      </button>
+      <h3 class="lib-view-title" id="libViewTitle">Curso</h3>
+
+      <div class="lib-manual-list" id="libManualList">
+
+        <div class="lib-manual" data-lib="enfermagem">
+          <span class="lib-manual-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 4h9l5 5v11a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 4v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="lib-manual-name">Manual em preparação</span>
+          <span class="lib-manual-type type-pdf">PDF</span>
+          <a href="#" class="lib-manual-download" aria-disabled="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Em breve
+          </a>
+        </div>
+
+        <div class="lib-manual" data-lib="enfermagem">
+          <span class="lib-manual-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 4h9l5 5v11a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 4v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="lib-manual-name">Manual em preparação</span>
+          <span class="lib-manual-type type-pdf">PDF</span>
+          <a href="#" class="lib-manual-download" aria-disabled="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Em breve
+          </a>
+        </div>
+
+        <div class="lib-manual" data-lib="smi">
+          <span class="lib-manual-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 4h9l5 5v11a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 4v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="lib-manual-name">Manual em preparação</span>
+          <span class="lib-manual-type type-pdf">PDF</span>
+          <a href="#" class="lib-manual-download" aria-disabled="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Em breve
+          </a>
+        </div>
+
+        <div class="lib-manual" data-lib="medicina">
+          <span class="lib-manual-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 4h9l5 5v11a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 4v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="lib-manual-name">Manual em preparação</span>
+          <span class="lib-manual-type type-pdf">PDF</span>
+          <a href="#" class="lib-manual-download" aria-disabled="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Em breve
+          </a>
+        </div>
+
+        <div class="lib-manual" data-lib="adm-publica">
+          <span class="lib-manual-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 4h9l5 5v11a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 4v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="lib-manual-name">Manual em preparação</span>
+          <span class="lib-manual-type type-pdf">PDF</span>
+          <a href="#" class="lib-manual-download" aria-disabled="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Em breve
+          </a>
+        </div>
+
+        <div class="lib-manual" data-lib="gestao">
+          <span class="lib-manual-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 4h9l5 5v11a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 4v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="lib-manual-name">Manual em preparação</span>
+          <span class="lib-manual-type type-pdf">PDF</span>
+          <a href="#" class="lib-manual-download" aria-disabled="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Em breve
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- = REQUISITOS / VALORES = -->
 <section class="reqs" id="requisitos">
   <div class="container reqs-inner">
 
@@ -328,11 +474,10 @@
       </div>
       <p class="price-note">Valores válidos para o ano lectivo em curso. Para condições de pagamento, contacte a secretaria.</p>
     </div>
-
   </div>
 </section>
 
-<!-- CTA INSCRIÇÃO -->
+<!-- = CTA INSCRIÇÃO = -->
 <section class="cta-strip" data-aos="zoom-in">
   <div class="container cta-strip-inner">
     <h2>Inscrições abertas para o ano em curso.</h2>
@@ -341,7 +486,7 @@
   </div>
 </section>
 
-<!-- CONTACTO -->
+<!-- = CONTACTO = -->
 <section class="contact" id="contacto">
   <div class="container contact-inner">
 
@@ -362,10 +507,9 @@
           <span class="contact-label">E-mail</span>
           <span><a href="mailto:info@ifacet.com">info@ifacet.com</a></span>
         </li>
-       
-      </ul>
-
-      <a href="https://wa.me/258879938828" class="btn btn-primary btn-whatsapp" target="_blank" rel="noopener">
+        <li>
+      
+      <a href="https://wa.me/258874839909" class="btn btn-primary btn-whatsapp" target="_blank" rel="noopener">
         Falar agora no WhatsApp
       </a>
     </div>
@@ -407,7 +551,7 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- = FOOTER = -->
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="footer-brand">
@@ -436,14 +580,13 @@
       </a>
     </div>
     
-  </div>
 
   <div class="footer-bottom">
-    <p>© <span id="year"></span> IFACET — Maputo, Moçambique. Todos os direitos reservados.by UAM.</p>
+    <p>© <span id="year"></span> IFACET — Maputo, Moçambique. Todos os direitos reservados. By UAM.</p>
   </div>
 </footer>
 
-<!-- SCRIPTS  -->
+<!-- = SCRIPTS = -->
 <script src="js/main.js"></script>
 </body>
 </html>
