@@ -1,3 +1,4 @@
+
 :root {
   /* Paleta */
   --navy-deep:   #0B2545;
@@ -81,7 +82,7 @@ img { max-width: 100%; display: block; }
   display: block;
 }
 
-/* - Textura de fundo sutil (referência têxtil capulana, geometria discreta) - */
+/*  Textura de fundo sutil (referência têxtil capulana, geometria discreta)  */
 .capulana-noise {
   position: fixed;
   inset: 0;
@@ -179,6 +180,7 @@ img { max-width: 100%; display: block; }
 }
 
 .main-nav { display: flex; align-items: center; gap: 32px; }
+.nav-close { display: none; }
 .main-nav a {
   color: var(--white);
   font-weight: 600;
@@ -369,7 +371,7 @@ img { max-width: 100%; display: block; }
   margin-top: 6px;
 }
 
-/* = CURSOS = */
+/* ===================== CURSOS ===================== */
 .courses { padding: 100px 0; background: var(--bone-dim); position: relative; }
 .section-head { max-width: 700px; margin-bottom: 56px; }
 .section-head h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
@@ -656,6 +658,171 @@ img { max-width: 100%; display: block; }
   .lightbox-nav { width: 42px; height: 42px; font-size: 1.4rem; }
 }
 
+/* = BIBLIOTECA = */
+.library { padding: 100px 0; background: var(--bone-dim); }
+.library-lede { max-width: 620px; margin-top: 14px; }
+
+.lib-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.lib-card {
+  position: relative;
+  border: 1.5px solid rgba(11,37,69,0.08);
+  padding: 28px 20px;
+  margin: 0;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  background: var(--white);
+  box-shadow: 0 14px 32px -22px rgba(11,37,69,0.25);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  text-align: left;
+}
+.lib-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 44px -20px rgba(11,37,69,0.32);
+  border-color: var(--sand);
+}
+
+.lib-card-icon {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: rgba(27,79,140,0.1);
+  color: var(--blue-accent);
+  display: flex; align-items: center; justify-content: center;
+}
+.lib-card-icon svg { width: 24px; height: 24px; }
+
+.lib-card-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--navy-deep);
+  line-height: 1.25;
+}
+.lib-card-count { font-size: 0.78rem; color: var(--sand); font-weight: 700; }
+
+.lib-grid.is-hidden { display: none; }
+
+/* Vista interna de um curso */
+.lib-view { display: none; }
+.lib-view.open { display: block; }
+
+.lib-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--blue-accent);
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 18px;
+  transition: color 0.2s;
+}
+.lib-back:hover { color: var(--navy-deep); }
+.lib-back span { font-size: 1.3rem; line-height: 1; }
+
+.lib-view-title {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  margin-bottom: 28px;
+}
+
+.lib-manual-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lib-manual {
+  display: none;
+  align-items: center;
+  gap: 16px;
+  background: var(--white);
+  border: 1.5px solid rgba(11,37,69,0.08);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+}
+.lib-manual.is-visible { display: flex; }
+
+.lib-manual-icon {
+  width: 42px; height: 42px;
+  min-width: 42px;
+  border-radius: var(--radius-sm);
+  background: rgba(201,162,75,0.14);
+  color: var(--sand);
+  display: flex; align-items: center; justify-content: center;
+}
+.lib-manual-icon svg { width: 20px; height: 20px; }
+
+.lib-manual-name {
+  flex: 1;
+  font-weight: 600;
+  color: var(--navy-deep);
+  font-size: 0.96rem;
+}
+
+/* Etiqueta de tipo de ficheiro — troca a classe (type-pdf/type-word/type-excel/type-ppt)
+   conforme o formato real do manual quando o adicionares */
+.lib-manual-type {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 4px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.lib-manual-type.type-pdf   { background: rgba(217,58,58,0.12);  color: #B23A3A; }
+.lib-manual-type.type-word  { background: rgba(43,87,154,0.12);  color: #2B579A; }
+.lib-manual-type.type-excel { background: rgba(33,115,70,0.12);  color: #217346; }
+.lib-manual-type.type-ppt   { background: rgba(209,98,40,0.12);  color: #D16228; }
+
+.lib-manual-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: var(--bone-dim);
+  color: #8a8474;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.lib-manual-download[aria-disabled="true"] { cursor: not-allowed; }
+/* Quando houver PDF real, remover aria-disabled e usar esta classe: */
+.lib-manual-download.is-ready {
+  background: var(--sand);
+  color: var(--navy-deep);
+  pointer-events: auto;
+}
+.lib-manual-download.is-ready:hover { background: var(--sand-light); }
+
+.lib-empty-note {
+  font-size: 0.88rem;
+  color: #8a8474;
+  font-style: italic;
+}
+
+@media (max-width: 980px) {
+  .lib-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .lib-grid { grid-template-columns: repeat(2, 1fr); }
+  .lib-manual { flex-wrap: wrap; }
+}
+
 /* = REQUISITOS / VALORES = */
 .reqs { padding: 100px 0; background: var(--bone); }
 .reqs-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
@@ -776,7 +943,6 @@ img { max-width: 100%; display: block; }
 .footer-nav a { color: rgba(255,255,255,0.75); font-weight: 600; font-size: 0.9rem; }
 .footer-nav a:hover { color: var(--sand); }
 
-
 .footer-social-group { display: flex; gap: 12px; }
 
 .footer-social {
@@ -785,7 +951,7 @@ img { max-width: 100%; display: block; }
   background: rgba(255,255,255,0.1);
   display: flex; align-items: center; justify-content: center;
   color: var(--white);
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 .footer-social:hover { background: var(--sand); color: var(--navy-deep); }
 
@@ -825,6 +991,9 @@ img { max-width: 100%; display: block; }
   .course-tracks { grid-template-columns: 1fr; }
   .reqs-inner { grid-template-columns: 1fr; gap: 48px; }
   .contact-inner { grid-template-columns: 1fr; }
+
+  /* Evita que conteúdo intrínseco largo (ex: <select> com opções longas)
+     force overflow horizontal quando o grid passa a coluna única */
   .about-inner > *, .contact-inner > * { min-width: 0; }
 }
 
@@ -846,6 +1015,23 @@ img { max-width: 100%; display: block; }
   }
   .main-nav.open { transform: translateX(0); box-shadow: -20px 0 50px rgba(0,0,0,0.3); }
   .main-nav a { font-size: 1.1rem; }
+  .nav-close {
+    display: flex;
+    position: absolute;
+    top: 18px; right: 18px;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    border: none;
+    color: var(--white);
+    font-size: 1.8rem;
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-close:hover { background: var(--sand); color: var(--navy-deep); transform: rotate(90deg); }
   .nav-toggle { display: flex; }
   .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-toggle.open span:nth-child(2) { opacity: 0; }
